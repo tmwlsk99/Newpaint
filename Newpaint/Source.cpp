@@ -6,7 +6,7 @@
 #include "math.h"
 
 const int width = 600;
-const int height = 400;
+const int height = 300;
 double xpos, ypos;
 float* pixels = new float[width*height * 3];
 
@@ -196,22 +196,42 @@ void drawLine(const int& i0, const int& j0, const int& i1, const int& j1, const 
 		drawPixel(i, j, 1.0f, 0.0f, 0.0f);
 	}
 	//원안에 A
-	for (int i = i0 + 80; i <= i0 + 160; i++)
+	if (IsinsideCircle2(xpos, ypos) == true)
 	{
-		int j;
 
-		j = sqrt(1600 - (i - (i0 + 120))*(i - (i0 + 120))) + (j0);
+		for (int i = i0 + 80; i <= i0 + 160; i++)
+		{
+			int j;
+
+			j = sqrt(1600 - (i - (i0 + 120))*(i - (i0 + 120))) + (j0);
 
 
-		drawPixel(i, j, 1.0f, 0.0f, 0.0f);
-		int k;
+			drawPixel(i, j, 0.0f, 0.0f, 1.0f);
+			int k;
 
-		k = -sqrt(1600 - (i - (i0 + 120))*(i - (i0 + 120))) + (j0);
-		drawPixel(i, k, 1.0f, 0.0f, 0.0f);
+			k = -sqrt(1600 - (i - (i0 + 120))*(i - (i0 + 120))) + (j0);
+			drawPixel(i, k, 0.0f, 0.0f, 1.0f);
+
+		}
+	}
+	else
+	{
+		for (int i = i0 + 80; i <= i0 + 160; i++)
+		{
+			int j;
+
+			j = sqrt(1600 - (i - (i0 + 120))*(i - (i0 + 120))) + (j0);
+
+
+			drawPixel(i, j, 1.0f, 0.0f, 0.0f);
+			int k;
+
+			k = -sqrt(1600 - (i - (i0 + 120))*(i - (i0 + 120))) + (j0);
+			drawPixel(i, k, 1.0f, 0.0f, 0.0f);
+
+		}
 
 	}
-
-
 	for (int i = i0 + 110; i <= i0 + 130; i++)
 	{
 		int j;
@@ -234,21 +254,38 @@ void drawLine(const int& i0, const int& j0, const int& i1, const int& j1, const 
 	}
 
 	//원안에 1자
-
-	for (int i = i0 + 200; i <= i0 + 280; i++)
+	if (IsinsideCircle3(xpos, ypos) == true)
 	{
-		int j;
 
-		j = sqrt(1600 - (i - (i0 + 240))*(i - (i0 + 240))) + (j0);
+		for (int i = i0 + 200; i <= i0 + 280; i++)
+		{
+			int j;
+
+			j = sqrt(1600 - (i - (i0 + 240))*(i - (i0 + 240))) + (j0);
 
 
-		drawPixel(i, j, 1.0f, 0.0f, 0.0f);
-		int k;
+			drawPixel(i, j, 0.0f, 0.0f, 1.0f);
+			int k;
 
-		k = -sqrt(1600 - (i - (i0 + 240))*(i - (i0 + 240))) + (j0);
-		drawPixel(i, k, 1.0f, 0.0f, 0.0f);
+			k = -sqrt(1600 - (i - (i0 + 240))*(i - (i0 + 240))) + (j0);
+			drawPixel(i, k, 0.0f, 0.0f, 1.0f);
+		}
 	}
+	else {
+		for (int i = i0 + 200; i <= i0 + 280; i++)
+		{
+			int j;
 
+			j = sqrt(1600 - (i - (i0 + 240))*(i - (i0 + 240))) + (j0);
+
+
+			drawPixel(i, j, 1.0f, 0.0f, 0.0f);
+			int k;
+
+			k = -sqrt(1600 - (i - (i0 + 240))*(i - (i0 + 240))) + (j0);
+			drawPixel(i, k, 1.0f, 0.0f, 0.0f);
+		}
+	}
 	for (int j = j0 - 20; j <= j0 + 20; j++)
 	{
 		int i;
@@ -257,21 +294,41 @@ void drawLine(const int& i0, const int& j0, const int& i1, const int& j1, const 
 	}
 
 	//원안에 왼쪽화살표
-	for (int i = i0 + 320; i <= i0 + 400; i++)
+
+	if (IsinsideCircle4(xpos, ypos) == true)
 	{
-		int j;
 
-		j = sqrt(1600 - (i - (i0 + 360))*(i - (i0 + 360))) + (j0);
+		for (int i = i0 + 320; i <= i0 + 400; i++)
+		{
+			int j;
+
+			j = sqrt(1600 - (i - (i0 + 360))*(i - (i0 + 360))) + (j0);
 
 
-		drawPixel(i, j, 1.0f, 0.0f, 0.0f);
-		int k;
+			drawPixel(i, j, 0.0f, 0.0f, 1.0f);
+			int k;
 
-		k = -sqrt(1600 - (i - (i0 + 360))*(i - (i0 + 360))) + (j0);
-		drawPixel(i, k, 1.0f, 0.0f, 0.0f);
+			k = -sqrt(1600 - (i - (i0 + 360))*(i - (i0 + 360))) + (j0);
+			drawPixel(i, k, 0.0f, 0.0f, 1.0f);
+		}
+
 	}
+	else {
+		for (int i = i0 + 320; i <= i0 + 400; i++)
+		{
+			int j;
+
+			j = sqrt(1600 - (i - (i0 + 360))*(i - (i0 + 360))) + (j0);
 
 
+			drawPixel(i, j, 1.0f, 0.0f, 0.0f);
+			int k;
+
+			k = -sqrt(1600 - (i - (i0 + 360))*(i - (i0 + 360))) + (j0);
+			drawPixel(i, k, 1.0f, 0.0f, 0.0f);
+		}
+
+	}
 	for (int i = i0 + 340; i <= i0 + 380; i++)
 	{
 		int j;
@@ -292,20 +349,39 @@ void drawLine(const int& i0, const int& j0, const int& i1, const int& j1, const 
 	}
 
 	//원안에 위화살표
-	for (int i = i0 + 440; i <= i0 + 520; i++)
+	if (IsinsideCircle5(xpos, ypos) == true)
 	{
-		int j;
 
-		j = sqrt(1600 - (i - (i0 + 480))*(i - (i0 + 480))) + (j0);
+		for (int i = i0 + 440; i <= i0 + 520; i++)
+		{
+			int j;
+
+			j = sqrt(1600 - (i - (i0 + 480))*(i - (i0 + 480))) + (j0);
 
 
-		drawPixel(i, j, 1.0f, 0.0f, 0.0f);
-		int k;
+			drawPixel(i, j, 0.0f, 0.0f, 1.0f);
+			int k;
 
-		k = -sqrt(1600 - (i - (i0 + 480))*(i - (i0 + 480))) + (j0);
-		drawPixel(i, k, 1.0f, 0.0f, 0.0f);
+			k = -sqrt(1600 - (i - (i0 + 480))*(i - (i0 + 480))) + (j0);
+			drawPixel(i, k, 0.0f, 0.0f, 1.0f);
+		}
+
 	}
+	else {
+		for (int i = i0 + 440; i <= i0 + 520; i++)
+		{
+			int j;
 
+			j = sqrt(1600 - (i - (i0 + 480))*(i - (i0 + 480))) + (j0);
+
+
+			drawPixel(i, j, 1.0f, 0.0f, 0.0f);
+			int k;
+
+			k = -sqrt(1600 - (i - (i0 + 480))*(i - (i0 + 480))) + (j0);
+			drawPixel(i, k, 1.0f, 0.0f, 0.0f);
+		}
+	}
 	for (int j = j0 - 20; j <= j0 + 20; j++)
 	{
 		int i;
@@ -572,78 +648,9 @@ int main(void)
 		
 
 
-		if (IsinsideCircle2(xpos, ypos) == true)
-		{
-
-			for (int i = i0 + 80; i <= i0 + 160; i++)
-			{
-				int j;
-
-				j = sqrt(1600 - (i - (i0 + 120))*(i - (i0 + 120))) + (j0);
-
-
-				drawPixel(i, j, 0.0f, 0.0f, 1.0f);
-				int k;
-
-				k = -sqrt(1600 - (i - (i0 + 120))*(i - (i0 + 120))) + (j0);
-				drawPixel(i, k, 0.0f, 0.0f, 1.0f);
-
-			}
-		}
-		if (IsinsideCircle3(xpos, ypos) == true)
-		{
-
-			for (int i = i0 + 200; i <= i0 + 280; i++)
-			{
-				int j;
-
-				j = sqrt(1600 - (i - (i0 + 240))*(i - (i0 + 240))) + (j0);
-
-
-				drawPixel(i, j, 0.0f, 0.0f, 1.0f);
-				int k;
-
-				k = -sqrt(1600 - (i - (i0 + 240))*(i - (i0 + 240))) + (j0);
-				drawPixel(i, k, 0.0f, 0.0f, 1.0f);
-			}
-		}
-
-		if (IsinsideCircle4(xpos, ypos) == true)
-		{
-
-			for (int i = i0 + 320; i <= i0 + 400; i++)
-			{
-				int j;
-
-				j = sqrt(1600 - (i - (i0 + 360))*(i - (i0 + 360))) + (j0);
-
-
-				drawPixel(i, j, 0.0f, 0.0f, 1.0f);
-				int k;
-
-				k = -sqrt(1600 - (i - (i0 + 360))*(i - (i0 + 360))) + (j0);
-				drawPixel(i, k, 0.0f, 0.0f, 1.0f);
-			}
-
-		}
-		if (IsinsideCircle5(xpos, ypos) == true)
-		{
-
-			for (int i = i0 + 440; i <= i0 + 520; i++)
-			{
-				int j;
-
-				j = sqrt(1600 - (i - (i0 + 480))*(i - (i0 + 480))) + (j0);
-
-
-				drawPixel(i, j, 0.0f, 0.0f, 1.0f);
-				int k;
-
-				k = -sqrt(1600 - (i - (i0 + 480))*(i - (i0 + 480))) + (j0);
-				drawPixel(i, k, 0.0f, 0.0f, 1.0f);
-			}
-
-		}
+	
+	
+		
 		if (IsinsideCircle6(xpos, ypos) == true)
 		{
 
